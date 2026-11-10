@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Shoe Analyzer · Oxford AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="analyzer-card">
+    <header class="app-header">
+      <div class="logo-mark">
+        <span class="logo-emoji">👟</span>
+      </div>
+      <div class="title-group">
+        <h1>Shoe Analyzer</h1>
+        <p class="tagline">Snap · Analyze · Discover</p>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">🌙</button>
+    </header>
+
+    <!-- Camera / preview area -->
+    <div class="camera-area">
+      <div class="camera-frame" id="cameraFrame">
+        <video id="cameraVideo" class="hidden" autoplay playsinline muted></video>
+        <img id="previewImage" class="image-preview hidden" src="#" alt="shoe preview">
+        <div class="camera-placeholder" id="cameraPlaceholder">
+          <span class="placeholder-icon">📷</span>
+          <p>Camera access is required</p>
+        </div>
+      </div>
+
+      <!-- Camera controls -->
+      <div class="camera-controls" id="cameraControls">
+        <button class="btn btn-ghost" id="cancelCameraBtn" type="button">Cancel</button>
+        <button class="btn btn-primary" id="captureBtn" type="button">📸 Capture</button>
+      </div>
+
+      <!-- Retake / Leave controls -->
+      <div class="camera-controls hidden" id="retakeControls">
+        <button class="btn btn-ghost" id="leaveBtn" type="button">🚪 Leave</button>
+        <button class="btn btn-primary" id="retakeBtn" type="button">🔄 Scan Another Shoe</button>
+      </div>
+    </div>
+
+    <!-- Status message -->
+    <div id="statusMessage" class="status-message hidden"></div>
+
+    <!-- Result section -->
+    <section class="result-section" id="resultSection">
+      <div class="result-header">
+        <span class="result-icon">📋</span>
+        <h2>Shoe Analysis</h2>
+      </div>
+
+      <div class="result-placeholder" id="placeholderMessage">
+        <span>👟</span>
+        Take a photo of a shoe, then tap Capture
+      </div>
+
+      <div id="resultContent" class="hidden">
+        <div class="result-item">
+          <div class="result-row">
+            <div class="result-label">Description</div>
+            <div class="result-value description-text" id="descOutput">—</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Brand</div>
+            <div class="result-value" id="brandOutput">—</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Price range</div>
+            <div class="result-value" id="priceOutput">—</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <p>Oxford AI · Available in the Philippines · Max 1 image, 5MB</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
